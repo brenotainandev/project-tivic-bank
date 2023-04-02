@@ -13,7 +13,7 @@ const createTransactionModel = (sequelize, DataTypes) => {
     },
     dateTime:DataTypes.DATE,
     type:DataTypes.STRING,
-    valueTransaction:DataTypes.DECIMAL,
+    amount:DataTypes.DECIMAL,
     accountId:{ 
       type: DataTypes.INTEGER, 
       foreignKey: true 
