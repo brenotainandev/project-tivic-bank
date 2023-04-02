@@ -5,7 +5,7 @@ const StatusCode = {
   UNAUTHORIZED: 401,
   NOT_FOUND: 404,
   SERVER_ERROR: 500,
-  NOT_CREATE: 422
-}
+  NOT_CREATE: 422,
+};
 
 module.exports = StatusCode;
