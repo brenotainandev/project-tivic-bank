@@ -3,7 +3,7 @@ const StatusCode = require('../types/status.code.types');
 
 const customerController = {
 
-  getAllCustomer: async (_req, res) => {
+  getAllCustomers: async (_req, res) => {
     try {
       const customer = await customerService.getAllCustomers();
   

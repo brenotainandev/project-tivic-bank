@@ -20,7 +20,7 @@ const createTransactionModel = (sequelize, DataTypes) => {
     }
   }, {
     underscored: true,
-    tableName: 'transaction'
+    tableName: 'transactions'
   });
 
   Transaction.associate = (models) => {

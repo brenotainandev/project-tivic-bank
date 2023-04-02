@@ -6,6 +6,7 @@ const StatusCode = {
   NOT_FOUND: 404,
   SERVER_ERROR: 500,
   NOT_CREATE: 422,
+  CONFLIC_ERROR: 409,
 };
 
 module.exports = StatusCode;

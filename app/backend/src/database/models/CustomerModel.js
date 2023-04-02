@@ -18,7 +18,7 @@ const createCustomertModel = (sequelize, DataTypes) => {
     phone:DataTypes.STRING
   }, {
     underscored: true,
-    tableName: 'customer'
+    tableName: 'customers'
   })
   return Customer;
 };

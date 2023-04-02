@@ -20,7 +20,7 @@ const createAccountModel = (sequelize, DataTypes) => {
     }
   }, {
     underscored: true,
-    tableName: 'account'
+    tableName: 'accounts'
   });
 
   Account.associate = (models) => {
