@@ -3,7 +3,7 @@ const { Customer, Account } = require('../database/models');
 const customerService = {
   getAllCustomers: async () => {
     const customers = await Customer.findAll({
-      attributes: { exclude: ['password'] },
+      attributes: { exclude: ['password', 'createdAt', 'updatedAt'] },
     });
     return customers;
   },
@@ -11,18 +11,19 @@ const customerService = {
   getCustomerById: async (id) => {
     const customer = await Customer.findOne({
       where: { id },
-      attributes: { exclude: ['password'] },
+      attributes: { exclude: ['password', 'createdAt', 'updatedAt'] },
     });
     return customer;
   },
 
   getAllCustomersAndAccount: async () => {
     const customers = await Customer.findAll({
-      attributes: { exclude: ['password'] },
+      attributes: { exclude: ['password', 'createdAt', 'updatedAt'] },
       include: [
         {
           model: Account,
           as: 'accounts',
+          attributes: { exclude: ['CustomerId', 'updatedAt', 'createdAt'] },
         },
       ],
     });
@@ -32,11 +33,12 @@ const customerService = {
   getCustomerAndAccountById: async (id) => {
     const customer = await Customer.findOne({
       where: { id },
-      attributes: { exclude: ['password'] },
+      attributes: { exclude: ['password', 'createdAt', 'updatedAt'] },
       include: [
         {
           model: Account,
           as: 'accounts',
+          attributes: { exclude: ['CustomerId', 'updatedAt', 'createdAt'] },
         },
       ],
     });
