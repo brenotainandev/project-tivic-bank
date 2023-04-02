@@ -14,9 +14,11 @@ const createAccountModel = (sequelize, DataTypes) => {
     numberAccount:DataTypes.STRING,
     openingDate:DataTypes.DATE,
     type:DataTypes.STRING,
+    balance:DataTypes.DECIMAL,
     customerId:{ 
-      type: DataTypes.INTEGER, 
-      foreignKey: true 
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      foreignKey: true,
     }
   }, {
     underscored: true,
@@ -25,7 +27,7 @@ const createAccountModel = (sequelize, DataTypes) => {
 
   Account.associate = (models) => {
     Account.belongsTo(models.Customer,
-    { foreignKey: 'customerId', as: 'customer' });
+    { foreignKey: 'customerId', as: 'customers' });
   };
 
   return Account;

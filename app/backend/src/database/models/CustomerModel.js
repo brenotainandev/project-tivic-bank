@@ -19,7 +19,13 @@ const createCustomertModel = (sequelize, DataTypes) => {
   }, {
     underscored: true,
     tableName: 'customers'
-  })
+  });
+
+  Customer.associate = (models) => {
+    Customer.hasMany(models.Account,
+    {strangeKey: 'customerId', as: 'accounts' });
+  };
+
   return Customer;
 };
 
