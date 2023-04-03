@@ -4,12 +4,20 @@ const accountService = {
   depositById: async ({ balance }, id) => {
     const account = await Account.findOne({
       where: { id },
-      attributes: ['balance'],
+      attribute: ['balance'],
     });
 
     if (!account) return undefined;
 
-    const newBalance = await account.update({ balance });
+    const value = balance + Number(account.balance);
+
+    const newBalance = await account.update({
+      numberAccount: account.numberAccount,
+      openingDate: account.openingDate,
+      type: account.type,
+      balance: value,
+      customerId: account.customerId,
+    });
 
     return newBalance;
   },

@@ -2,7 +2,7 @@ const accountService = require('../services/account.service');
 const StatusCode = require('../types/status.code.types');
 
 const accountController = {
-  editaccount: async (req, res) => {
+  depositById: async (req, res) => {
     try {
       const { params: { id }, body } = req;
       const account = await accountService.depositById(body, id);
