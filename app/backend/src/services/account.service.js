@@ -1,7 +1,7 @@
 const { Account } = require('../database/models');
 
 const accountService = {
-  deposit: async ({ balance }, id) => {
+  depositById: async ({ balance }, id) => {
     const account = await Account.findOne({
       where: { id },
       attributes: ['balance'],
