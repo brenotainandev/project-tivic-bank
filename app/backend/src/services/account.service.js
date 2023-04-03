@@ -1,3 +1,4 @@
+const Decimal = require('decimal.js');
 const { Account } = require('../database/models');
 
 const accountService = {
@@ -9,7 +10,12 @@ const accountService = {
 
     if (!account) return undefined;
 
-    const value = balance + Number(account.balance);
+    if (isNaN(balance)) return 'invalid';
+
+    const balance1 = new Decimal(balance);
+    const balance2 = new Decimal(Number(account.balance));
+
+    const value = balance1.plus(balance2);
 
     const newBalance = await account.update({
       numberAccount: account.numberAccount,
@@ -32,7 +38,10 @@ const accountService = {
 
     if (balance > Number(account.balance)) return 'negative';
 
-    const value = Number(account.balance) - balance;
+    const balance1 = new Decimal(Number(account.balance));
+    const balance2 = new Decimal(balance);
+
+    const value = balance1.minus(balance2);
 
     if (!value) return 'invalid';
 
@@ -55,7 +64,12 @@ const accountService = {
 
     if (!account) return undefined;
 
-    const value = balance + Number(account.balance);
+    if (isNaN(balance)) return 'invalid';
+
+    const balance1 = new Decimal(balance);
+    const balance2 = new Decimal(Number(account.balance));
+
+    const value = balance1.plus(balance2);
 
     const newBalance = await account.update({
       numberAccount: account.numberAccount,
