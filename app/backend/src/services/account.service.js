@@ -82,6 +82,34 @@ const accountService = {
     return newBalance;
   },
 
+  withdrawalNumberAccount: async ({ balance }, numberAccount) => {
+    const account = await Account.findOne({
+      where: { numberAccount },
+      attribute: ['balance'],
+    });
+
+    if (!account) return undefined;
+
+    if (balance > Number(account.balance)) return 'negative';
+
+    const balance1 = new Decimal(Number(account.balance));
+    const balance2 = new Decimal(balance);
+
+    const value = balance1.minus(balance2);
+
+    if (!value) return 'invalid';
+
+    const newBalance = await account.update({
+      numberAccount: account.numberAccount,
+      openingDate: account.openingDate,
+      type: account.type,
+      balance: value,
+      customerId: account.customerId,
+    });
+
+    return newBalance;
+  },
+
 };
 
 module.exports = accountService;
