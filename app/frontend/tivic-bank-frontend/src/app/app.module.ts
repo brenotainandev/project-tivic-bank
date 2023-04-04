@@ -17,6 +17,7 @@ import { BalanceComponent } from './views/balance/balance.component';
 import { TransactionComponent } from './componentes/template/transaction/transaction.component';
 import { NavComponent } from './componentes/template/nav/nav.component';
 import { MatCardModule } from  '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { MatCardModule } from  '@angular/material/card';
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
-    MatCardModule
+    MatCardModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
