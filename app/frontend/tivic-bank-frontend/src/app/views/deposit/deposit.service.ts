@@ -32,13 +32,13 @@ export class DepositService {
 
     return this.http.put<IAccount>(url, value).pipe(
       map((obj) => obj),
-      catchError((e) => this.errorHandler(e))
+      catchError((e) => this.errorHandler(e.message))
     );
   }
 
 
   errorHandler(e: any): Observable<any> {
-    this.showMessage("Ocorreu um erro!", true);
+    this.showMessage("Conta Invalida!", true);
     return EMPTY;
   }
 }

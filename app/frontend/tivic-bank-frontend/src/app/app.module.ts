@@ -19,9 +19,11 @@ import { NavComponent } from './componentes/template/nav/nav.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSnackBarModule } from  '@angular/material/snack-bar';
 import { HttpClientModule } from  '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 
 @NgModule({
@@ -33,7 +35,7 @@ import { HttpClientModule } from  '@angular/common/http';
     DepositComponent,
     BalanceComponent,
     TransactionComponent,
-    NavComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +49,9 @@ import { HttpClientModule } from  '@angular/common/http';
     ReactiveFormsModule,
     MatFormFieldModule,
     MatSnackBarModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

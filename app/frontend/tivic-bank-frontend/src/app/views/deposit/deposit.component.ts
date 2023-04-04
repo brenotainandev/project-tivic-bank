@@ -7,11 +7,11 @@ import { IAccount } from './account.model';
   templateUrl: './deposit.component.html',
   styleUrls: ['./deposit.component.css']
 })
-export class DepositComponent implements OnInit{
+export class DepositComponent implements OnInit {
 
   account: IAccount = {
-    numberAccount: '1234567',
-    balance: 1000
+    numberAccount: '',
+    balance: 0
   }
 
   constructor(private depositService: DepositService) {
