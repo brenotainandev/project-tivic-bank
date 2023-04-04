@@ -5,13 +5,12 @@ import { Observable, EMPTY } from "rxjs";
 import { map, catchError } from "rxjs/operators";
 import { IAccount } from './account.model';
 
-
 @Injectable({
   providedIn: 'root'
 })
-export class DepositService {
+export class WithdrawalService {
 
-  baseUrl = "http://localhost:3000/account/deposit/number";
+  baseUrl = "http://localhost:3000/account/withdrawal/number";
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
 
@@ -24,7 +23,7 @@ export class DepositService {
     });
   }
 
-  deposit(account: IAccount): Observable<IAccount> {
+  withdrawal(account: IAccount): Observable<IAccount> {
     const url =  `${this.baseUrl}/${account.numberAccount}`;
 
     const value = {
@@ -42,4 +41,5 @@ export class DepositService {
     this.showMessage("Conta Invalida!", true);
     return EMPTY;
   }
+
 }
