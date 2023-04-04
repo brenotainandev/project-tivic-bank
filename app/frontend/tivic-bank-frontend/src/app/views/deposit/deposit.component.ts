@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DepositService } from './deposit.service';
+import { IAccount } from './account.model';
 
 @Component({
   selector: 'app-deposit',
@@ -8,15 +9,23 @@ import { DepositService } from './deposit.service';
 })
 export class DepositComponent implements OnInit{
 
+  account: IAccount = {
+    numberAccount: '1234567',
+    balance: 1000
+  }
+
   constructor(private depositService: DepositService) {
 
   }
 
   ngOnInit(): void {
-   
+
   }
 
   depositAccount(): void {
-    this.depositService.showMessage("Deposito Realizado :)");
+
+    this.depositService.deposit(this.account).subscribe(() => {
+      this.depositService.showMessage("Deposito Realizado :)")
+    });
   }
 }

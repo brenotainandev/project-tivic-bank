@@ -1,7 +1,6 @@
-export interface Account {
+export interface IAccount {
   id?: number;
   numberAccount: string,
-  openingDate: string,
-  type: string,
+  type?: string,
   balance: number,
 }

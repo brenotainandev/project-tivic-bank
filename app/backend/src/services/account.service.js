@@ -25,7 +25,12 @@ const accountService = {
       customerId: account.customerId,
     });
 
-    return newBalance;
+    return valueAtt = {
+      id: newBalance.id,
+      numberAccount: newBalance.numberAccount,
+      type: newBalance.type,
+      balance: newBalance.balance,
+    };
   },
 
   withdrawalById: async ({ balance }, id) => {
@@ -53,7 +58,12 @@ const accountService = {
       customerId: account.customerId,
     });
 
-    return newBalance;
+    return valueAtt = {
+      id: newBalance.id,
+      numberAccount: newBalance.numberAccount,
+      type: newBalance.type,
+      balance: newBalance.balance,
+    };
   },
 
   depositNumberAccount: async ({ balance }, numberAccount) => {
@@ -79,7 +89,12 @@ const accountService = {
       customerId: account.customerId,
     });
 
-    return newBalance;
+    return valueAtt = {
+      id: newBalance.id,
+      numberAccount: newBalance.numberAccount,
+      type: newBalance.type,
+      balance: newBalance.balance,
+    };
   },
 
   withdrawalNumberAccount: async ({ balance }, numberAccount) => {
@@ -107,7 +122,13 @@ const accountService = {
       customerId: account.customerId,
     });
 
-    return newBalance;
+
+    return valueAtt = {
+      id: newBalance.id,
+      numberAccount: newBalance.numberAccount,
+      type: newBalance.type,
+      balance: newBalance.balance,
+    };
   },
 
 };
