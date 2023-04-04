@@ -2,25 +2,25 @@
   <mat-sidenav class="sidenav" mode="side" opened
       fixedInViewport="true" fixedTopGap="64">
       <mat-nav-list class="nav-list">
-          <a mat-list-item >
+          <a mat-list-item routerLink="/">
               <i class="material-icons">
                   home
               </i>
               Home
           </a>
-          <a mat-list-item>
+          <a mat-list-item routerLink="/account/balance">
               <i class="material-icons">
                 paid
               </i>
               Consultar Saldo
           </a>
-          <a mat-list-item >
+          <a mat-list-item routerLink="/account/deposit">
             <i class="material-icons">
               my_library_add
             </i>
             Depositar
           </a>
-          <a mat-list-item >
+          <a mat-list-item routerLink="/account/withdrawal">
             <i class="material-icons">
               payment
             </i>
@@ -28,7 +28,7 @@
           </a>
       </mat-nav-list>
   </mat-sidenav>
-  <mat-sidenav-content class="content">
+  <mat-sidenav-content class="content" routerLink="/">
       <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
