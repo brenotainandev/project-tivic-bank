@@ -118,7 +118,7 @@ Na sua máquina você deve ter:
  > `./env.example`
   ```txt
   MYSQL_USER=root
-  MYSQL_PASSWORD=*@sql8Ab4tr20
+  MYSQL_PASSWORD=sua_senha
   MYSQL_DATABASE=tivic_bank_db
   MYSQL_HOST="127.0.0.1"
   MYSQL_DIALECT=mysql
