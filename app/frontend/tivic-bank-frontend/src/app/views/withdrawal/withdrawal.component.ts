@@ -26,6 +26,9 @@ export class WithdrawalComponent implements OnInit {
 
     this.withdrawalService.withdrawal(this.account).subscribe(() => {
       this.withdrawalService.showMessage("Saque Realizado :)")
+
+      this.account.numberAccount = '';
+      this.account.balance = 0;
     });
   }
 }

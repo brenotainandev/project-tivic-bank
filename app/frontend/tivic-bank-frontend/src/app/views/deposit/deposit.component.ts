@@ -26,6 +26,9 @@ export class DepositComponent implements OnInit {
 
     this.depositService.deposit(this.account).subscribe(() => {
       this.depositService.showMessage("Deposito Realizado :)")
+
+      this.account.numberAccount = '';
+      this.account.balance = 0;
     });
   }
 }
