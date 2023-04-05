@@ -1,0 +1,20 @@
+<mat-card>
+  <form>
+    <mat-card-title class="cardTitulo">Novo Deposito</mat-card-title>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Informe o Numero da Conta</mat-label>
+      <input matInput type="number" [(ngModel)]="account.numberAccount" name="numberAccount" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Valor</mat-label>
+      <input matInput type="number" [(ngModel)]="account.balance" name="balance" required>
+      <span matTextPrefix>R$&nbsp;</span>
+    </mat-form-field>
+
+  </form>
+
+  <button mat-raised-button (click)="depositAccount()" color="primary">
+    Depositar
+  </button>

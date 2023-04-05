@@ -7,5 +7,6 @@ accountRoute.put('/deposit/:id', accountController.depositById);
 accountRoute.put('/deposit/number/:numberAccount', accountController.depositNumberAccount);
 accountRoute.put('/withdrawal/:id', accountController.withdrawalById);
 accountRoute.put('/withdrawal/number/:numberAccount', accountController.withdrawalNumberAccount);
+accountRoute.post('/number', accountController.getBalanceAccount);
 
 module.exports = accountRoute;

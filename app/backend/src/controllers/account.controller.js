@@ -123,6 +123,24 @@ const accountController = {
       res.status(StatusCode.SERVER_ERROR).json({ message: error });
     }
   },
+
+  getBalanceAccount: async (req, res) => {
+    const { numberAccount } = req.body;
+  
+    try {
+      const account = await accountService.getBalanceAccount({ numberAccount });
+
+      if (account === undefined) {
+        return res
+          .status(StatusCode.NOT_FOUND)
+          .json({ message: 'Conta invalida' });
+      }
+
+      res.status(StatusCode.OK).json(account);
+    } catch (error) {
+      res.status(StatusCode.SERVER_ERROR).json({ message: error });
+    }
+  },
 };
 
 module.exports = accountController;
