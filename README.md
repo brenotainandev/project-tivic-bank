@@ -2,6 +2,8 @@
 
 <details>
 <summary><strong>👨‍💻 Telas</strong></summary><br />
+ **Contas Cadastradas:** 1234567 e 7654321
+
 
   **Tela Home**
   ![Exemplo app front](assets/home.png)
