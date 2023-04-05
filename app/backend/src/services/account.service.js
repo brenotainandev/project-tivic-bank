@@ -131,6 +131,17 @@ const accountService = {
     };
   },
 
+  getBalanceAccount: async ({ numberAccount }) => {
+    const account = await Account.findOne({
+      where: { numberAccount },
+      attributes: { exclude: ['CustomerId', 'customerId', 'openingDate', 'updatedAt', 'createdAt'] },
+    });
+
+    if (!account) return undefined;
+
+    return account;
+  },
+
 };
 
 module.exports = accountService;
