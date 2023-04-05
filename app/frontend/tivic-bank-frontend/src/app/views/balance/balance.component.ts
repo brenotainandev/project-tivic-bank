@@ -30,11 +30,10 @@ export class BalanceComponent implements OnInit {
 
     this.balanceService.balanceAccount(this.account).subscribe((account) => {
       this.listAccount = [account];
-      this.account = account;
-
-      console.log(this.listAccount);
 
       this.balanceService.showMessage("Conta encontrada :)")
+
+      this.account.numberAccount = '';
     });
   }
 
